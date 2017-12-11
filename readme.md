@@ -20,26 +20,30 @@ https://github.com/sainath09/OSCalgorithm
  * python main.py [flags]
  * different flags 
  *	-input description of input data set - one of  MNIST | imgcomp | natimages
- *	-t_max maximum mumber of iterations
+ *	-t maximum mumber of iterations
  *	-k ratio of k/N to run - any integer between 0.1 to 0.9
  *	-genX a boolean to generate X from data set or use the existing csv file set it to false for initial run.
  *      -inputimg specify the path of input file for compression
  *      -istrain a bool value to train the system or compress set it to true for generating U. 
- *	warning : give t_max to same value for testing and training as the name U saves depends on t_max to retrive U for compression.
+ *	warning : give t to same value for testing and training as the name U saves depends on t_max to retrive U for compression.
 
 ## Example usages :
 
 ```
-python main.py -input MNIST -t_max 1000000 -k 1 -genX True  -istrain True
+python main.py -input MNIST -t 1000000 -k 1 -istrain True -genX  True
 
  ```
 
+``` 
+python main.py -input imgcomp -t 1000000 -k 1 -genX True  -istrain True -inputimg /compdata/1.pgm 
+```
+
  ``` 
-python main.py -input imgcomp -t_max 1000000 -k 1 -genX True  -istrain False -inputimg /compimg/1.pgm 
+python main.py -input imgcomp -t 1000000 -k 1 -genX True  -istrain False -inputimg /compimg/1.pgm 
 ```
 
 ```
-python main.py -input natimages -t_max 1000000 -k 1 -genX True  -istrain False -inputimg 
+python main.py -input natimages -t 1 -k 1 -istrain True -genX  True
 ```
 
 ## required python libraries : 
@@ -51,10 +55,6 @@ python main.py -input natimages -t_max 1000000 -k 1 -genX True  -istrain False -
 * cv2
 * sklearn - preprocessing	  
 * matplotlib - pyplot
-
-
-
-
 
 ## Directory structure
 
