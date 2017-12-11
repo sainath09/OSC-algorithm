@@ -1,3 +1,9 @@
+GitHub link :
+https://github.com/sainath09/OSCalgorithm
+
+instructions are clear in github
+
+
 # Orthogonal sparse coding
 
 > Dictionary learning and image compression using state of art efficient method
@@ -5,35 +11,41 @@
 ## Data sets
 
 * Make sure you have data set mnist 'MNIST/train.csv' in the current directory
-
    * Download link : https://s3.amazonaws.com/sparsefiles/train.csv
-* Make sure you have the dataset natural images in 'naturalimages/image_0001.jpg' to naturalimages/image_0526.jpg
-   * download link : http://www.vision.caltech.edu/html-files/archive.html (images of cars)
+* Make sure you have the dataset natural images in 'naturalimages/' to naturalimages/image_0526.jpg
+   * Download link : http://www.vision.caltech.edu/html-files/archive.html (images of cars)
 
-3)  extract these files in './compdata/' for image compresion application
-Download link : 
-https://s3.amazonaws.com/sparsefiles/output/output/pgmfiles.zip
+*  Extract 15 ram pgm files in './compdata/' for image compresion application
+   * Download link : https://s3.amazonaws.com/sparsefiles/output/output/pgmfiles.zip
 
 
 ## Running Command :
- python main.py [flags]
- different flags 
-	-input description of input data set - one of  MNIST | imgcomp | natimages
-	-t_max maximum mumber of iterations
-	-k ratio of k/N to run - any integer between 0.1 to 0.9
-	-genX a boolean to generate X from data set or use the existing csv file
+ * python main.py [flags]
+ * different flags 
+ *	-input description of input data set - one of  MNIST | imgcomp | natimages
+ *	-t_max maximum mumber of iterations
+ *	-k ratio of k/N to run - any integer between 0.1 to 0.9
+ *	-genX a boolean to generate X from data set or use the existing csv file
 	  set it to false for initial run.
-        -inputimg specify the path of input file for compression
-        -istrain a bool value to train the system or compress 
-	  set it to true for generating U.
-	warning : give t_max to same value for testing and training as the name U saves depends on t_max to retrive U for compression.
+ *      -inputimg specify the path of input file for compression
+ *      -istrain a bool value to train the system or compress 
+	  set it to true for generating U. 
+ *	warning : give t_max to same value for testing and training as the name U saves depends on t_max to retrive U for compression.
 
 ## Example usages :
 
-* ```python main.py -input MNIST -t_max 1000000 -k 1 -genX True  -istrain True ```
-* ``` python main.py -input imgcomp -t_max 1000000 -k 1 -genX True  -istrain False -inputimg /compimg/1.pgm ```
-[do this only after generating U]
-* ```python main.py -input natimages -t_max 1000000 -k 1 -genX True  -istrain False -inputimg ```
+```
+python main.py -input MNIST -t_max 1000000 -k 1 -genX True  -istrain True
+
+ ```
+
+ ``` 
+python main.py -input imgcomp -t_max 1000000 -k 1 -genX True  -istrain False -inputimg /compimg/1.pgm 
+```
+
+```
+python main.py -input natimages -t_max 1000000 -k 1 -genX True  -istrain False -inputimg 
+```
 
 ## required python libraries : 
 * numpy
@@ -44,7 +56,7 @@ https://s3.amazonaws.com/sparsefiles/output/output/pgmfiles.zip
 * cv2
 * sklearn - preprocessing	  
 * matplotlib - pyplot
-      
+
 
 
 
