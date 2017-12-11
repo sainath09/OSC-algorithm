@@ -46,7 +46,7 @@ def genU(myargs,genX='False'):
   :return: returns a dictionary of SNR vs K/N
   '''
   op = dict()
-  if(genX == 'True'):
+  if(myargs['-genX'] == 'True'):
     X = np.zeros(64)
     if(myargs['-input'] == 'natimages'):
       for i in range(1,527):
@@ -80,7 +80,7 @@ def genU(myargs,genX='False'):
       X = X[1:, ]
 
     elif(myargs['-input'] == 'MNIST'):
-      input_file = 'train.csv'
+      input_file = 'MNIST/train.csv'
       X = np.genfromtxt(input_file, delimiter=',', dtype=np.uint8)
       X = skimage.img_as_float(X)
       print X[1]
