@@ -1,9 +1,6 @@
 GitHub link :
 https://github.com/sainath09/OSCalgorithm
 
-instructions are clear in github
-
-
 # Orthogonal sparse coding
 
 > Dictionary learning and image compression using state of art efficient method
@@ -25,11 +22,9 @@ instructions are clear in github
  *	-input description of input data set - one of  MNIST | imgcomp | natimages
  *	-t_max maximum mumber of iterations
  *	-k ratio of k/N to run - any integer between 0.1 to 0.9
- *	-genX a boolean to generate X from data set or use the existing csv file
-	  set it to false for initial run.
+ *	-genX a boolean to generate X from data set or use the existing csv file set it to false for initial run.
  *      -inputimg specify the path of input file for compression
- *      -istrain a bool value to train the system or compress 
-	  set it to true for generating U. 
+ *      -istrain a bool value to train the system or compress set it to true for generating U. 
  *	warning : give t_max to same value for testing and training as the name U saves depends on t_max to retrive U for compression.
 
 ## Example usages :
