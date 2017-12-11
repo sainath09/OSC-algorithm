@@ -2,22 +2,20 @@
 
 > Dictionary learning and image compression using state of art efficient method
 
-##Data sets
+## Data sets
 
-* make sure you have data set mnist 'MNIST/train.csv' in the current directory
+* Make sure you have data set mnist 'MNIST/train.csv' in the current directory
 
-   *download link : https://s3.amazonaws.com/sparsefiles/train.csv
-* make sure you have the dataset natural images in 'naturalimages/image_0001.jpg' to naturalimages/image_0526.jpg
-download link : 
-https://s3.amazonaws.com/sparsefiles/naturalimages/image_0001.jpg 
-*** replace 0001 with 0001,0002...0526 to download images ***
+   * Download link : https://s3.amazonaws.com/sparsefiles/train.csv
+* Make sure you have the dataset natural images in 'naturalimages/image_0001.jpg' to naturalimages/image_0526.jpg
+   * download link : http://www.vision.caltech.edu/html-files/archive.html (images of cars)
 
 3)  extract these files in './compdata/' for image compresion application
 Download link : 
 https://s3.amazonaws.com/sparsefiles/output/output/pgmfiles.zip
 
 
-## running command :
+## Running Command :
  python main.py [flags]
  different flags 
 	-input description of input data set - one of  MNIST | imgcomp | natimages
@@ -32,10 +30,10 @@ https://s3.amazonaws.com/sparsefiles/output/output/pgmfiles.zip
 
 ## Example usages :
 
-* '''python main.py -input MNIST -t_max 1000000 -k 1 -genX True  -istrain True '''
-* ''' python main.py -input imgcomp -t_max 1000000 -k 1 -genX True  -istrain False -inputimg /compimg/1.pgm '''
+* ```python main.py -input MNIST -t_max 1000000 -k 1 -genX True  -istrain True ```
+* ``` python main.py -input imgcomp -t_max 1000000 -k 1 -genX True  -istrain False -inputimg /compimg/1.pgm ```
 [do this only after generating U]
-* '''python main.py -input natimages -t_max 1000000 -k 1 -genX True  -istrain False -inputimg '''
+* ```python main.py -input natimages -t_max 1000000 -k 1 -genX True  -istrain False -inputimg ```
 
 ## required python libraries : 
 * numpy
@@ -53,7 +51,7 @@ https://s3.amazonaws.com/sparsefiles/output/output/pgmfiles.zip
 
 ## Directory structure
 
-* compdata
+* compdata/
     * 15 images of benchmark data set [link](http://imagecompression.info/test_images/) 
     * 1.pgm
     * 2.pgm
