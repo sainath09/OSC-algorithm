@@ -69,7 +69,7 @@ def genU(myargs,genX='False'):
 
     elif(myargs['-input'] == 'imgcomp'):
       for i in range(1, 11):
-        img = imageio.imread('compdata/' + str(i) + '.pgm')
+        img = imageio.imread('../compdata/' + str(i) + '.pgm')
         number_of_patches = img.shape[0] * img.shape[1] / 64
         for patches in range(1000):
           rand_i = np.random.randint(0, img.shape[0] / 8)
@@ -89,9 +89,9 @@ def genU(myargs,genX='False'):
       print "Input format:", "python main.py -input [imgcomp | train.csv | natimages ] -t [integer] -k [[0,1] float ratio k/n] -genX [bool - True to regnerate X or  flse for " \
                              "using the .csv file"
       return
-    np.savetxt("output/output_"+myargs['-input']+"_X_" + ".csv", X, delimiter=',')
+    np.savetxt("../output/output_"+myargs['-input']+"_X_" + ".csv", X, delimiter=',')
 
-  X = np.genfromtxt('output/output_'+myargs['-input']+'_X_', delimiter=',', dtype=np.uint8)
+  X = np.genfromtxt('../output/output_'+myargs['-input']+'_X_', delimiter=',', dtype=np.uint8)
   X = skimage.img_as_float(X)
   n = X.shape[1]
   l = X.shape[0]
@@ -102,8 +102,8 @@ def genU(myargs,genX='False'):
   k = int(myargs['-k']) * n
   m = model(X=X, U=U, t_max=t_max, e_init=e_init, e_final=e_final, k=k, n=n, l=l)
   trained_U = m.init_training()
-  np.savetxt("output/output_output_"+myargs['-input']+"_U" + str(t_max) + '_' + str(k / float(n)) + ".csv", trained_U, delimiter=',')
+  np.savetxt("../output/output_output_"+myargs['-input']+"_U" + str(t_max) + '_' + str(k / float(n)) + ".csv", trained_U, delimiter=',')
   img = scipy.misc.toimage(trained_U, high=255, low=0)
-  img.save("output/output_output_"+myargs['-input']+"_U" + str(t_max) + '_' + str(k / float(n)) + ".png")
+  img.save("../output/output_output_"+myargs['-input']+"_U" + str(t_max) + '_' + str(k / float(n)) + ".png")
   op[k / float(n)] = scipy.stats.signaltonoise(trained_U, axis=None)
   return op

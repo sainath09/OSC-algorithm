@@ -82,7 +82,7 @@ def main():
    t_max = myargs['-t_max']
    k = 64
    n = 64 # always 64
-   U = np.genfromtxt("output/output_image_" + str(t_max) + '_' + str(k / float(n)) + ".csv" , delimiter=',')
+   U = np.genfromtxt("../output/output_image_" + str(t_max) + '_' + str(k / float(n)) + ".csv" , delimiter=',')
 
    img = imageio.imread(input_file)
    output_image = np.zeros(img.shape[0]*img.shape[1]).reshape(img.shape[0] , img.shape[1])
@@ -93,10 +93,10 @@ def main():
        output_image[i*8 : i*8 + 8 , j*8 : j*8+8]= imu.compress(U,X = img[i*8 : i*8 + 8 , j*8 : j*8+8])
    compressed_image = scipy.misc.toimage(output_image,high=255,low=0)
    print "saving to output/",input_file
-   compressed_image.save('output/'+ input_file )
-   img = cv2.imread('output/'+ input_file)
+   compressed_image.save('../output/'+ input_file )
+   img = cv2.imread('../output/'+ input_file)
    equalized = cv2.equalizeHist(img[:,:,0])
-   cv2.imwrite('output/'+ input_file+'.png',equalized)
+   cv2.imwrite('../output/'+ input_file+'.png',equalized)
    print "written ",'output/'+ input_file+'.png'
 
 
